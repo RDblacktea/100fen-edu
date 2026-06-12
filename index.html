@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100分教育資源整合中心 | 專為升學而生</title>
+    <!-- Modern Typography from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <h1 class="logo">100分<span>題庫</span></h1>
+            <nav>
+                <button id="cart-btn" class="cart-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span id="cart-count">0</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>邁向100分教育資源整合中心的第一步</h2>
+            <p>精選 20 本優質參考書，助你學測、分科測驗金榜題名。</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="section-title">
+            <h3>熱銷排行榜</h3>
+        </div>
+        <!-- Books Grid -->
+        <div id="books-grid" class="books-grid">
+            <!-- Books will be injected here by app.js -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 100分教育資源整合中心. 版權所有.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>購物車</h2>
+            <button id="close-cart-btn" class="close-btn">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Cart items will be injected here -->
+            <p class="empty-cart-msg">您的購物車是空的</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>總計:</span>
+                <span id="cart-total-price">NT$ 0</span>
+            </div>
+            <button id="checkout-btn" class="checkout-btn" disabled>前往結帳 (貨到付款)</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal-btn" class="close-btn">&times;</span>
+            <h2>填寫收件資訊</h2>
+            <p class="payment-note">⚠️ 本店目前僅提供<strong>貨到付款</strong>服務</p>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="name">收件人姓名</label>
+                    <input type="text" id="name" required placeholder="例如：王小明">
+                </div>
+                <div class="form-group">
+                    <label for="phone">聯絡電話</label>
+                    <input type="tel" id="phone" required placeholder="例如：0912345678">
+                </div>
+                <div class="form-group">
+                    <label for="address">收件地址</label>
+                    <input type="text" id="address" required placeholder="請填寫完整地址">
+                </div>
+                <button type="submit" class="submit-order-btn">確認送出訂單</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div id="toast" class="toast">訂單送出成功！我們將盡快為您出貨。</div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
