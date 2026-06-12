@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- State ---
     const books = window.books || [];
     let cart = [];
+    const SHIPPING = 100;
 
     // --- DOM Elements ---
     const booksGrid = document.getElementById('books-grid');
@@ -36,6 +37,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="book-info">
                     <h4 class="book-title">${book.title}</h4>
                     <p class="book-desc">${book.description}</p>
+                    <div class="data-status">
+                        <div class="status-item ${book.dataComplete ? 'status-checked' : ''}">
+                            <span class="checkbox-sq">${book.dataComplete ? '✓' : ''}</span>
+                            資料齊全
+                        </div>
+                        <div class="status-item ${!book.dataComplete ? 'status-checked' : ''}">
+                            <span class="checkbox-sq">${!book.dataComplete ? '✓' : ''}</span>
+                            資料不齊全
+                        </div>
+                    </div>
+                    <div class="usb-status ${book.hasUsb ? 'usb-yes' : 'usb-no'}">
+                        <span class="usb-checkbox">${book.hasUsb ? '✓' : ''}</span>
+                        附贈隨身碟
+                    </div>
                     <div class="book-footer">
                         <span class="book-price">NT$ ${book.price}</span>
                         <button class="add-to-cart-btn" data-id="${book.id}">加入購物車</button>
@@ -86,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             checkoutBtn.disabled = false;
         }
 
-        cartTotalPrice.textContent = `NT$ ${total}`;
+        cartTotalPrice.textContent = `NT$ ${total + SHIPPING}`;
 
         // Re-attach event listeners for cart controls
         document.querySelectorAll('.inc-btn').forEach(btn =>
@@ -151,6 +166,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openModal() {
         closeCart();
+
+        // 填入下單明細
+        const summaryItems = document.getElementById('order-summary-items');
+        const summaryTotal = document.getElementById('order-summary-total-price');
+        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        summaryItems.innerHTML = cart.map(item => `
+            <div class="order-summary-row">
+                <span class="order-item-title">${item.title}</span>
+                <span class="order-item-qty">x${item.quantity}</span>
+                <span class="order-item-price">NT$ ${item.price * item.quantity}</span>
+            </div>
+        `).join('') + `
+            <div class="order-summary-row shipping-row">
+                <span class="order-item-title">運費</span>
+                <span class="order-item-qty"></span>
+                <span class="order-item-price">NT$ ${SHIPPING}</span>
+            </div>
+        `;
+        summaryTotal.textContent = `NT$ ${total + SHIPPING}`;
+
         checkoutModal.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
@@ -207,10 +242,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 整理購物車內容為文字
         let orderDetails = cart.map(item => `- ${item.title} x ${item.quantity} (NT$ ${item.price * item.quantity})`).join('\\n');
-        const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        orderDetails += `\\n- 運費：NT$ ${SHIPPING}`;
+        const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) + SHIPPING;
 
         // 收集表單資料
         const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value;
         const address = document.getElementById('address').value;
 
@@ -218,6 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = {
             "主旨": `新訂單通知：來自 ${name} 的貨到付款訂單`,
             "顧客姓名": name,
+            "收件人信箱": email,
             "連絡電話": phone,
             "收件地址": address,
             "訂購明細": orderDetails,
