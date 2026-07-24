@@ -12,15 +12,13 @@ const books = [
   { id: 11, title: '115(上)國中大補帖(全版本)', description: '1.115(上)康軒國中-大補貼1-3年級(全科目)</br>2.115(上)南一國中-大補貼1-3年級(全科目)</br>3.115(上)翰林國中-大補貼1-3年級(全科目)', price: 1500, image: 'https://placehold.co/400x550/b45309/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
   { id: 12, title: '115(全)國中模擬題本(全版本)', description: '<三年級專用>', price: 1200, image: 'https://placehold.co/400x550/1d4ed8/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
   { id: 13, title: '115(全)國中複習卷(全版本)', description: '<三年級專用>', price: 1200, image: 'https://placehold.co/400x550/1d4ed8/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
-  { id: 14, title: '115(上)國中 門市卷(全版本)', description: '<一二年級專用>', price: 700, image: 'https://placehold.co/400x550/047857/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
-  { id: 15, title: '115(上)國中 習作 數學課本解答(全版本)', description: '1.115(上)康軒國中習作 數學課本(1-3年級)</br>2.115(上)南一國中習作 數學課本(1-3年級)</br>3.115(上)翰林國中習作 數學課本(1-3年級)', price: 380, image: 'https://placehold.co/400x550/0f766e/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
-  { id: 16, title: '115(上)高中英文題庫（全版本）', description: '1.龍騰英文題庫</br>2.三民英文題庫', price: 1500, image: 'https://placehold.co/400x550/334155/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
-  { id: 17, title: '115(上)高職英文題庫（全版本）', description: '1.南一高中數學題庫</br>2.翰林高中數學題庫</br>3.三民高中數學題庫</br>4.龍騰高中數學題庫</br>5.泰宇高中數學題庫', price: 2000, image: 'https://placehold.co/400x550/334155/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
-  { id: 18, title: '115(上)高職數學題庫（全版本）', description: '1.上龍騰數學題庫</br>2.東大數學題庫', price: 1200, image: 'https://placehold.co/400x550/334155/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
-  { id: 19, title: '115(上)高職英文題庫（全版本）', description: '1.龍騰英文題庫</br>2.專大英文題庫</br>3.翰林英文題庫.', price: 1500, image: 'https://placehold.co/400x550/334155/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
-  { id: 20, title: '115(上)國小翰林 英文題庫(1-2年級)', description: '1.Hooray </br>2.Twinkle', price: 1000, image: 'https://placehold.co/400x550/831843/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
-  { id: 21, title: '115(上)國小康軒 英文題庫(1-2年級)', description: '1.Follow Me </br>2.Bravo ABC </br>3.Cool ABC </br>4.Super starter', price: 1500, image: 'https://placehold.co/400x550/831843/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
-  { id: 22, title: '115(上)國小何嘉仁 英文題庫(1-2年級)', description: '1.Fun World </br>2.Wow! STORY </br>3.GO Magic </br>4.WS', price: 1500, image: 'https://placehold.co/400x550/831843/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
+  { id: 14, title: '115(上)高中英文題庫（全版本）', description: '1.龍騰英文題庫</br>2.三民英文題庫', price: 1500, image: 'https://placehold.co/400x550/334155/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
+  { id: 15, title: '115(上)高職英文題庫（全版本）', description: '1.南一高中數學題庫</br>2.翰林高中數學題庫</br>3.三民高中數學題庫</br>4.龍騰高中數學題庫</br>5.泰宇高中數學題庫', price: 2000, image: 'https://placehold.co/400x550/334155/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
+  { id: 16, title: '115(上)高職數學題庫（全版本）', description: '1.上龍騰數學題庫</br>2.東大數學題庫', price: 1200, image: 'https://placehold.co/400x550/334155/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
+  { id: 17, title: '115(上)高職英文題庫（全版本）', description: '1.龍騰英文題庫</br>2.專大英文題庫</br>3.翰林英文題庫.', price: 1500, image: 'https://placehold.co/400x550/334155/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
+  { id: 18, title: '115(上)國小翰林 英文題庫(1-2年級)', description: '1.Hooray </br>2.Twinkle', price: 1000, image: 'https://placehold.co/400x550/831843/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
+  { id: 19, title: '115(上)國小康軒 英文題庫(1-2年級)', description: '1.Follow Me </br>2.Bravo ABC </br>3.Cool ABC </br>4.Super starter', price: 1500, image: 'https://placehold.co/400x550/831843/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
+  { id: 20, title: '115(上)國小何嘉仁 英文題庫(1-2年級)', description: '1.Fun World </br>2.Wow! STORY </br>3.GO Magic </br>4.WS', price: 1500, image: 'https://placehold.co/400x550/831843/e0e0e0?text=PDF+&font=oswald', hasUsb: true, dataComplete: true },
 ];
 
 // Provide global access for pure HTML/JS implementation
