@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://RDblacktea.github.io/100fen-edu/sitemap.xml

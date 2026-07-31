@@ -58,7 +58,10 @@ window.books (data.js) → renderBooks() → DOM 商品卡
 - **Formspree 端點**：硬編碼於 [app.js](app.js)，變數名為 `FORMSPREE_ENDPOINT`，需要替換時直接改該行。
 - **事件監聽器**：購物車按鈕（`+` / `-` / 移除）在每次 `renderCart()` 時重新綁定，沒有使用事件委派。修改購物車 DOM 結構時需注意同步更新綁定邏輯。
 
+## 商品資料現況
+
+`data.js` 目前共 20 筆商品，ID 1–20 皆唯一（無重複）。
+
 ## 已知問題
 
-- `data.js` 中商品 ID 20 重複出現三次（最後三筆資料），`addToCart` 用 `find()` 只會匹配到第一筆。
 - 購物車狀態不持久化（重新整理即清空，未使用 localStorage）。
